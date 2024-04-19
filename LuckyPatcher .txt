@@ -1,0 +1,44 @@
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV4/main/Source.lua"))()
+
+local Window = lib:MakeWindow({
+  Title = "Lucky Patcher : Example",
+  SubTitle = "by : TMR.Exe",
+  LoadText = "Lucky Patcher",
+  Flags = "TMR.Exe | Example.lua"
+})
+
+local Notify = lib:MakeNotify({
+  Title = "Notification",
+  Text = "You Successfully Loaded Lucky Patcher",
+  Time = 5
+})
+
+local Main = Window:MakeTab({Name = "Main", Icon = "Home"})
+local Section = Main:AddSection({"Main Section"})
+local Button = Main:AddButton({
+  Name = "Lucky Block 1 (FREE)",
+  Callback = function()
+    game:GetService("ReplicatedStorage").SpawnLuckyBlock:FireServer()
+  end
+})
+local Section = Main:AddSection({"Probably Paid (BETA)"})
+local Button = Main:AddButton({
+  Name = "Super lucky Block",
+  Callback = function()
+    game:GetService("ReplicatedStorage").SpawnSuperBlock:FireServer()
+  end
+})
+local Button = Main:AddButton({
+  Name = "Galaxy Lucky Block",
+  Callback = function()
+    game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+  end
+})
+local Tab = Window:MakeTab({Name = "Credits", Icon = "Settings"})
+Tab:AddDiscordInvite({
+  DiscordTitle = "TMR.Exe | Community",
+  DiscordIcon = "rbxassetid://15298567397",
+  DiscordLink = "https://discord.gg/fgXfkvFqGs"
+})
+
+
